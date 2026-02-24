@@ -1,141 +1,400 @@
-*{
-    font-family: 'Times New Roman', Times, serif;
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-header{
 
-    background-color: rgb(32, 31, 31);
-    padding: 10px;
+body {
+  background: #0f0f0f;
+  color: white;
+  transition: 0.3s;
 }
-.headertext{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    color: white;
+
+body.light {
+  background: #f4f4f4;
+  color: #111;
 }
-#mar{
-    text-align: center;
-    text-decoration: none;
-    padding: 30px;
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  z-index: 99;
 }
-#eduimg{
-    padding: 5px;
+
+body.light header {
+  background: rgba(255, 255, 255, 0.8);
 }
-.mainalign{
-    margin: auto;
-    width: 700px;
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
 }
-.section1 {
-    background-color: rgb(228, 230, 232);
-    border-radius: 12px;
-    padding: 16px;
+
+body.light header a {
+  color: #111;
 }
-h2 {
-    color: black;
+
+/* Contact Tab */
+.contact-tab {
+  background: #4c9aff;
+  color: white !important;
 }
-a{
-    text-decoration: none;
-    padding: 5px;
+
+body.light .contact-tab {
+  background: #222;
 }
-.socialm{
-    display: flex;
-    justify-content: center;    
+/* Contact + Hamburger group */
+.right-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 2px;     /* EXACT 2px distance */
 }
-#Thanks{
-    text-align: center;
+#nav-menu a {
+  text-align: center;
+  border-right: #ccc 1px solid;
+  border-bottom: #ccc 1px solid;
 }
-footer{
-    background-color: rgb(32, 31, 31);
-    padding: 10px;
+
+/* Hamburger */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  margin-left: 10px;
 }
-#footertext {
-    text-align: center;
-    color: white;
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background: white;
 }
-.position {
-    display: flex;
-    justify-content: flex-start; 
-    align-items: center;
+
+body.light .hamburger div {
+  background: #111;
 }
-#im{
-    padding: 10px;
-    width:160px;
-    height: 62px;
-    object-fit: contain;
+
+/* Navigation */
+nav {
+  display: none;
+  gap: 10px;
 }
-.time {
-    color: white;
-    background-color: rgb(35, 34, 34);
-    border-radius: 0.1cm;
-    padding: 0.0035%;
-    font-size: 12px;
+
+nav.active {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  position: absolute;
+  top: 70px;
+  right: 0;
+  width: 100%;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.95);
 }
-.underdevelopment{
-    text-align: center;
+
+body.light nav.active {
+  background: rgba(255, 255, 255, 0.95);
 }
-.proj{
-    display: flex;
-    justify-content: space-between;
-    margin-left: 15px;
-    align-items: center;
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
 }
-.nav-toggle {
-    margin-top: 10px;
-    right: 15px;
-    position: fixed;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    font-size: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1001;
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+body.light .card {
+  background: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #222;
+}
+
+/* CONNECT SECTION */
+.connect-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.connect-button {
+  padding: 12px 25px;
+  background: #4c9aff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+
+/* RECENT INFO – Left text, Right contact */
+.recent-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.recent-left {
+  flex: 1;
+  text-align: left;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.recent-right {
+  flex: 1;
+  text-align: right;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.recent-right a {
+    color: #4c9aff;
+  text-decoration: none;
+}
+
+
+/* FOOTER */
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 50px;
+  background: #111;
+  color: #ccc;
+  flex-wrap: wrap;
+}
+
+.footer-left a {
+  color: #4c9aff;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+.footer-right {
+  font-weight: 600;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #ff6b6b;
+  color: white;
+}
+
+body.light .theme-toggle {
+  background: #4c9aff;
+}
+
+/* ABOUT + SKILLS SIDE-BY-SIDE */
+.about-skills-container {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.about-left {
+  flex: 1.2;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 470px;
+  border-radius: 14px;
+  display: block;
+  margin: 0 auto 0px auto;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.skills-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.skills-right .card {
+  width: 100%;
+}
+
+/* Make ONLY the Projects grid vertical instead of row grid */
+#projects-grid {
+  display: flex !important;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* PROJECTS — Vertical column layout with reduced width */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 650px;           /* reduces the width */
+  margin: auto;               /* centers the whole section */
+}
+
+/* Project Card */
+.project-card {
+  background: #1a1a1a;
+  padding: 18px 22px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+body.light .project-card {
+  background: #fff;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  background: #222;
+}
+
+/* Left side text */
+.project-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.project-info p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 4px;
+}
+
+/* Right side link */
+.project-link {
+  color: #4c9aff;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.project-link:hover {
+  opacity: 0.8;
+}
+
+/* ACHIEVEMENTS — Same clean vertical list style as projects */
+.achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 600px;      /* Matches project section width */
+  margin: auto;
+}
+
+.achievement-card {
+  background: #1a1a1a;
+  padding: 18px 22px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+body.light .achievement-card {
+  background: #ffffff;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  background: #222;
+}
+
+.achievement-card p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav.active {
+    grid-template-columns: 1fr;
   }
-.nav-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 170px;
-    height: 100%;
-    border-radius: 5px 0px;
-    background-color: #222;
-    padding-top: 80px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    
+
+  .recent-info {
+    flex-direction: column;
+    text-align: left;
   }
-  .nav-panel nav {
-    display: flex;
+  .about-skills-container {
     flex-direction: column;
   }
-  .nav-panel a {
-    color: white;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-bottom: 1px solid #444;
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  
-  .nav-panel a:hover {
-    background-color: #333;
-  }
-  
-  .nav-panel.active {
-    transform: translateX(0);
-  }
-  
 
-
-@media screen and (max-width: 768px) {
-    .mainalign {
-        width: 90%;
-    }
-    #im{
-        padding: 10px;
-        width:160px;
-        height: 62px;
-        object-fit: contain;
-    }
-    #size{
-        font-size: 24px;
-    }
+  .project-link {
+    align-self: flex-end;
+  }
 }
-/*added this code for good view of site on mobiles also */
