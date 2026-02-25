@@ -445,7 +445,42 @@ body.light .achievement-card {
   padding-right: 10px;
   transition: opacity .4s ease, transform .3s ease;
 }
+/* --- ANIMATIONS --- */
 
+/* Profile image slides from top */
+.animate-profile {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.animate-profile.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* INITIAL STATE */
+.animate-top {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* VISIBLE STATE */
+.in-view {
+  opacity: 1;
+  transform: translate(0,0);
+}
+.ach-item-desc{
+  display: none;
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -567,6 +602,7 @@ body.light .achievement-card {
     opacity: 0.85;
     line-height: 1.5;
     padding: 0 5px;
+    display: block; /* show description on mobile */
   }
 
   /* Recent Info */
@@ -600,4 +636,37 @@ body.light .achievement-card {
   .footer-right {
     text-align: left;
   }
+  /* --- ANIMATIONS --- */
+
+/* Profile image slides from top */
+.animate-profile {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* When visible */
+.animate-profile.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* INITIAL STATE */
+.animate-top {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* VISIBLE STATE */
+.in-view {
+  opacity: 1;
+  transform: translate(0,0);
+}
 }
