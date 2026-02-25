@@ -374,6 +374,78 @@ body.light .achievement-card {
   font-weight: 500;
 }
 
+/*--- Achievements Section Layout ---*/
+.achievements-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  min-height: 1100px;     /* gives scrolling space */
+}
+
+
+
+/* LEFT TEXT - follows scroll naturally */
+/* LEFT TEXT - scrolls naturally */
+.achievements-text {
+  flex: 1;
+  font-size: 1.05rem;
+  opacity: 1;
+  line-height: 1.6;
+  min-height: 200px;          /* ensures space so it scrolls */
+  transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.achievements-images {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;             /* BIGGER GAP = smooth section-by-section scrolling */
+}
+.ach-item {
+  text-align: center;
+
+  transition: transform 0.3s ease;
+}
+.ach-item img {
+  width: 100%;
+  max-width: 470px;             /* SAME as about section */
+  height: 300px;                /* controlled height to match proportions */
+  object-fit: cover;            /* makes image always look clean */
+  border-radius: 14px;          /* SAME rounded corners */
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);  /* SAME shadow */
+  display: block;
+  margin: 0 auto;
+}
+
+
+.ach-title {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Fade animation */
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+}
+#ach-desc-box {
+  position: sticky;
+  top: 120px;      /* stays visible while scrolling */
+  padding-right: 10px;
+  transition: opacity .4s ease, transform .3s ease;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -396,5 +468,8 @@ body.light .achievement-card {
 
   .project-link {
     align-self: flex-end;
+  }
+  .achievements-container {
+    flex-direction: column;
   }
 }
