@@ -453,23 +453,151 @@ body.light .achievement-card {
     grid-template-columns: 1fr;
   }
 
-  .recent-info {
-    flex-direction: column;
-    text-align: left;
-  }
   .about-skills-container {
     flex-direction: column;
   }
-  .project-card {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  
 
   .project-link {
     align-self: flex-end;
   }
   .achievements-container {
     flex-direction: column;
+  }
+
+  /* Header spacing */
+  header {
+    padding: 15px 25px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  /* Hero text */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* About section */
+  .about-skills-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .skills-right {
+    width: 100%;
+  }
+
+  .profile-img {
+    max-width: 85%;
+  }
+
+  /* Projects */
+  .project-card {
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    text-align: left;
+  }
+
+  /* .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  } */
+  .project-link {
+    align-self: flex-start;
+  }
+
+  /* Achievements mobile layout */
+  /* entire achievements section stacked */
+  .achievements-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  /* disable sticky behavior */
+  #ach-desc-box {
+    position: static !important;
+    top: unset;
+    padding: 0;
+  }
+
+  /* Hide desktop scrolling description box */
+  .achievements-text {
+    display: none; 
+  }
+
+  /* Make achievements list simple & full width */
+  .achievements-images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .ach-item {
+    text-align: center;
+  }
+
+  /* full image */
+  .ach-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+
+  .ach-title {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  /* NEW: Description directly below title */
+  .ach-item-desc {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.85;
+    line-height: 1.5;
+    padding: 0 5px;
+  }
+
+  /* Recent Info */
+  .recent-info {
+    flex-direction: column;
+    text-align: left;
+    gap: 12px;
+  }
+  .recent-left {
+    text-align: left;
+  }
+  .recent-right {
+    text-align: center;
+
+  }
+
+  /* Footer in one column */
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    padding: 30px 20px;
+  }
+
+  .footer-left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer-right {
+    text-align: left;
   }
 }
